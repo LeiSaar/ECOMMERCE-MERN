@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* <NavLink> renders as an <a> in the DOM by default */
+a.active hr{
+    display: block;
+}
