@@ -6,7 +6,7 @@ import ProductItem from '../components/ProductItem';
 
 const Collection = () => {
 
-  const { products } = useContext(ShopContext);
+  const { products, search, setSearch, showSearch } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -36,6 +36,25 @@ const Collection = () => {
 
   const applyFilter = () => {
     let productsCopy = products.slice();
+
+    // if (search && showSearch){
+    //   productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
+    // }
+
+    if (search && showSearch) {
+      const normalize = str =>
+        str.toLowerCase().replace(/[^a-z0-9\s]/g, " ");
+
+      const searchTokens = normalize(search).split(/\s+/);
+
+      productsCopy = productsCopy.filter(item => {
+        const words = normalize(item.name).split(/\s+/);
+
+        return searchTokens.every(token =>
+          words.some(word => word.startsWith(token))
+        );
+      });
+    }
 
     if (category.length > 0) {
       productsCopy = productsCopy.filter(item => category.includes(item.category));
@@ -70,11 +89,17 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory])
+  }, [category, subCategory, search, showSearch])
 
   useEffect(() => {
     sortProduct();
   }, [sortType])
+
+  useEffect(()=>{
+      if(!showSearch){
+        setSearch('')
+      }
+  }, [showSearch]) 
 
 
   // useEffect(()=>{
@@ -86,7 +111,7 @@ const Collection = () => {
   // }, [subCategory])
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
+    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t border-t-gray-300'>
 
       {/* Filter Options */}
       {/* Left Side */}
