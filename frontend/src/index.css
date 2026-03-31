@@ -8,6 +8,7 @@ a.active hr{
 
 *{
     font-family: "Outfit", sans-serif;
+    border-color: #d1d5db;
 }
 
 ::-webkit-scrollbar{
