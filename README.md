@@ -1,3 +1,34 @@
+## E-Commerce Website
+
+This project is a fully functional **e-commerce website** designed to provide a seamless and user-friendly shopping experience. The application features a structured navigation system with the following main pages:
+
+- **Home**
+- **Collection**
+- **About**
+- **Contact**
+
+Users can seamlessly navigate between these pages via the top navigation bar.
+
+---
+
+## Home Page
+
+The **Home Page** serves as the central entry point of the application, offering a comprehensive overview of the platform and its product offerings. It highlights key sections to engage users and provide essential information, including:
+
+- **Latest Arrivals** – Showcasing newly added products  
+- **Latest Collections** – Displaying curated product groups  
+- **Best Sellers** – Featuring popular and high-demand items  
+- **Exchange & Return Policy** – Informing users about purchase policies  
+- **Contact Information** – Providing essential communication details  
+
+### Preview
+<img width="1160" height="929" alt="image" src="https://github.com/user-attachments/assets/ad59a946-7212-4144-8418-52bafe09f90c" />
+
+<img width="1209" height="896" alt="image" src="https://github.com/user-attachments/assets/e85b99a3-b4ae-4142-a543-8d9c8c0c2edc" />
+
+<img width="1212" height="804" alt="image" src="https://github.com/user-attachments/assets/e843f748-de79-45e8-ae75-a649ea1cbafd" />
+
+---
 ## Collection Page
 
 The **Collection Page** displays a list of available products and provides users with an intuitive way to browse, filter, search, and sort items.
